@@ -1,0 +1,28 @@
+<h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
+
+<form action="/user/create" method="POST">
+  <h1>Register here!</h1>
+
+  <% if(flash && flash.err) { %>
+  <ul class="alert">
+    <% Object.keys(flash.err).forEach(function(error) { %>
+      <li><%- JSON.stringify(flash.err[error])%></li>
+    <% }) %>
+  </ul>
+  <% } %>
+
+  <input type="text" name="userName" placeholder="Enter Username Here...">
+  <br>
+  <input type="text" name="title" placeholder="Enter Title Here...">
+  <br>
+  <input type="email" name="email" placeholder="Enter Email Here...">
+  <br>
+  <input type="password" name="password" placeholder="Enter Password Here...">
+  <br>
+  <input type="password" name="confirmation" placeholder="Confirm Password Here...">
+  <br>
+  <button type="submit" class="btn btn-lg">Finish</button>
+  <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+
+</form>
+
