@@ -1,0 +1,39 @@
+<h1>Users List</h1>
+
+<table class="table table-bordered table-striped">
+  <th>User #</th>
+  <th>Name</th>
+  <th>Title</th>
+  <th>Email</th>
+  <th class="text-center" colspan="3">Options</th>
+
+<% _.each(users, function(user) { %>
+
+    <tr data-id="user.id" data-model="user">
+
+      <td><%= user.id%></td>
+      <td><%= user.userName %></td>
+      <td><%= user.title %></td>
+      <td> Contact: <%= user.email %></td>
+
+      <td class="text-center">
+        <a class="btn btn-success" href="/user/edit/<%= user.id %>">Edit User</a>
+      </td>
+      <td class="text-center">
+        <a class="btn btn-warning" href="/user/show/<%= user.id %>">Show User</a>
+      </td>
+      <td class="text-center">
+        <form action="/user/deleteUser/<%= user.id %>" method="POST">
+          <input type="hidden" name="_method" value="delete">
+          <input type="hidden" name="_csrf" value="<%= _csrf %>">
+          <input type="submit" class="btn btn-danger" value="Delete <%= user.userName %>">
+        </form>
+      </td>
+
+    </tr>
+
+<% }) %>
+
+</table>
+
+

@@ -1,11 +1,14 @@
-<div>
+<div class="well">
   <h1><%= user.userName %></h1>
   <h3><%= user.title %></h3>
   <hr>
 
   <h3> Contact: <%= user.email %></h3>
 
-  <button>
+  <button class="btn btn-warning">
     <a href="/user/edit/<%= user.id %>">Edit User</a>
+  </button>
+  <button class="btn btn-info">
+    <a href="/user/show/">Go back</a>
   </button>
 </div>
