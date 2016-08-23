@@ -45,6 +45,11 @@ module.exports = {
   },
 
   index: function (req, res, next) {
+
+    console.log("current date", new Date());
+    console.log("authentication value", req.session.authenticated);
+
+
     User.find(function foundUsers (err, foundUsers) {
       if(err) return console.log(err);
 

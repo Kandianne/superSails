@@ -1,8 +1,17 @@
-<h1>Create Items for your list here</h1>
+<div>
+  <h1>Create Items for your list here</h1>
 
-<form class="form-group" action="/list/create" method="POST">
-  <input class="form-control" name="name" placeholder="name">
-  <input class="form-control" name="description" placeholder="description">
-  <input type="submit" class="btn btn-primary" placeholder="Finish">
-  <input type="hidden" name="_csrf" value="<%= _csrf %>">
-</form>
+  <form class="form-group" action="/list/create" method="POST">
+    <input class="form-control" name="name" placeholder="name">
+    <input class="form-control" name="description" placeholder="description">
+    <input type="submit" class="btn btn-primary" placeholder="Finish">
+    <input type="hidden" name="_csrf" value="<%= _csrf %>">
+  </form>
+
+  <button class="btn btn-success">
+    <a href="/list/showList/">
+      Show List
+    </a>
+  </button>
+</div>
+

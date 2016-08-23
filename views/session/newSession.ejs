@@ -1,0 +1,19 @@
+<h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
+
+<form action="/session/create" method="POST" class="form-group">
+  <h1>Sign in here!</h1>
+
+  <% if(flash && flash.err) { %>
+  <ul class="alert">
+    <% Object.keys(flash.err).forEach(function(error) { %>
+    <li><%- JSON.stringify(flash.err[error])%></li>
+    <% }) %>
+  </ul>
+  <% } %>
+
+  <input type="email" name="email" placeholder="Email Address..." class="form-control" required>
+  <input type="password" name="password" placeholder="Password..." class="form-control" required>
+  <button type="submit" class="btn btn-lg">Sign In</button>
+  <input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+
+</form>
