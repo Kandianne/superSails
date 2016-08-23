@@ -25,7 +25,9 @@ module.exports = {
 
         return res.redirect('/user/registerUser');
       }
-      // res.json(createdUser);
+
+      req.session.authenticated = true;
+      req.session.User = createdUser;
 
       res.redirect('/user/show/' + createdUser.id );
 
@@ -45,9 +47,6 @@ module.exports = {
   },
 
   index: function (req, res, next) {
-
-    console.log("current date", new Date());
-    console.log("authentication value", req.session.authenticated);
 
 
     User.find(function foundUsers (err, foundUsers) {
