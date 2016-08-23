@@ -1,0 +1,29 @@
+<table class="table">
+
+  <th>Item Name</th>
+  <th>Description</th>
+  <th>Done?</th>
+
+  <% _.each(items, function(item) { %>
+
+  <tr data-id="item.id" data-model="item">
+    <td><%= item.id %></td>
+    <td><%= item.description %></td>
+    <td><%= item.done %></td>
+  </tr>
+
+  <% }) %>
+
+</table>
+
+<button class="btn btn-info">
+  <a  href="/list/createItem">
+    Add More to list
+  </a>
+</button>
+<button class="btn btn-sm">
+  <a  href="/">
+    Home
+  </a>
+</button>
+

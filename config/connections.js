@@ -30,7 +30,7 @@ module.exports.connections = {
   ***************************************************************************/
   // localDiskDb: {
   //   adapter: 'sails-disk'
-  // },
+  // }
 
   /***************************************************************************
   *                                                                          *
@@ -40,13 +40,13 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
-  mysql: {
-    adapter: 'sails-mysql',
-    host: 'localhost',
-    user: 'YOUR_MYSQL_USER', //optional
-    password: 'YOUR_MYSQL_PASSWORD', //optional
-    database: 'YOUR_MYSQL_DB' //optional
-  }
+  // mysql: {
+  //   adapter: 'sails-mysql',
+  //   host: 'localhost',
+  //   user: 'YOUR_MYSQL_USER', //optional
+  //   password: 'YOUR_MYSQL_PASSWORD', //optional
+  //   database: 'YOUR_MYSQL_DB' //optional
+  // }
 
   /***************************************************************************
   *                                                                          *
@@ -56,14 +56,14 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  // someMongodbServer: {
-  //   adapter: 'sails-mongo',
-  //   host: 'localhost',
-  //   port: 27017,
-  //   user: 'username', //optional
-  //   password: 'password', //optional
-  //   database: 'your_mongo_db_name_here' //optional
-  // },
+  mongo: {
+    adapter: 'sails-mongo',
+    host: 'localhost',
+    port: 27017,
+    user: '', //optional
+    password: '', //optional
+    database: 'firstMongoDB' //optional
+  }
 
   /***************************************************************************
   *                                                                          *
